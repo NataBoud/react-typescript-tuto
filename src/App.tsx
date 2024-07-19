@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const [prix, setPrix] = useState(7)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <input 
+        type="number" 
+        value={prix} 
+        onChange={(event) => setPrix(Number(event.target.value))} 
+      />
+      <h1>{prix * 2} euros</h1>
+    </div>
+
   )
 }
 
 export default App
+
+// Tiper une variable de maniere: EXPLICITE & IMPLICITE (à priviigier)
+
+/**
+ * En TS, lors de l'INITIALISATION on veux préciser 3 info
+ * (précédé d'un marquer) :
+ * 1) Le NOM de la variable précédé const / let (DEFINITION)
+ * 2) Le TYPE de la variable précédé ":" / let (TYPAGE)
+ * 3) La VALEUR de la variable précédé "=" / let (ASSIGNATION)
+ * 
+ */
